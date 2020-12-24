@@ -8,18 +8,18 @@ Data Source for configmaps
 3. command line 
 
 Steps:
-1. Create a file in linux.
-echo -n 'Non-sensitive data inside file-1' > file-1.txt
-echo -n 'Non-sensitive data inside file-2' > file-2.txt
-
-2. Create configmap 
+1. Create a file in linux.<br/>
+echo -n 'Non-sensitive data inside file-1' > file-1.txt<br/>
+echo -n 'Non-sensitive data inside file-2' > file-2.txt<br/>
+<br/>
+2. Create configmap <br/>
 kubectl create configmap nginx-configmap-volume --from-file=file-1.txt --from-file=file-2.txt
+<br/>
+3. View config maps <br/>
+kubectl get configmap<br/>
+kubectl describe configmap nginx-configmap-volume<br/> 
 
-3. View config maps 
-kubectl get configmap
-kubectl describe configmap nginx-configmap-volume 
-
-4. Create a pod using the below yaml
+4. Create a pod using the below yaml<br/>
 #Filename: nginx-pod-configmap-volume.yaml
 ```
 apiVersion: v1
@@ -44,6 +44,7 @@ spec:
         - key: file-2.txt
           path: file-b.txt
 ```
+<br/>
 Command:
 kubectl create -f  nginx-pod-configmap-volume.yaml
 
