@@ -44,7 +44,9 @@ kubectl create configmap nginx-configmap-volume --from-file=file-1.txt --from-fi
 
 5. Create a pod using the below yaml
 <br/>
+
 # Filename: nginx-pod-configmap-volume.yaml
+
 ```
 apiVersion: v1
 kind: Pod
@@ -68,6 +70,7 @@ spec:
         - key: file-2.txt
           path: file-b.txt
 ```
+
 <br/>
 # Command:
 ```
