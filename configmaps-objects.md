@@ -16,8 +16,8 @@ Data Source for configmaps
 Steps:
 1. Create a file in linux.<br/>
 ```
-echo -n 'Non-sensitive data inside file-1' > file-1.txt<br/>
-echo -n 'Non-sensitive data inside file-2' > file-2.txt<br/>
+echo -n 'Non-sensitive data inside file-1' > file-1.txt
+echo -n 'Non-sensitive data inside file-2' > file-2.txt
 ```
 <br/>
 2. Create configmap <br/>
