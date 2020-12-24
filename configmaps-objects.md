@@ -15,26 +15,34 @@ Data Source for configmaps
 
 Steps:
 1. Create a file in linux.<br/>
+```
 echo -n 'Non-sensitive data inside file-1' > file-1.txt<br/>
 echo -n 'Non-sensitive data inside file-2' > file-2.txt<br/>
+```
 <br/>
 2. Create configmap <br/>
+```
 kubectl create configmap nginx-configmap-volume --from-file=file-1.txt --from-file=file-2.txt
+```
 <br/>
 3. View all config maps 
 <br/>
+```
    kubectl get configmap<br/>
+```
 4. describe specific configmap
+```
    kubectl describe configmap nginx-configmap-volume
+```
 <br/> 
 
-4. Create a pod using the below yaml<br/>
-#Filename: nginx-pod-configmap-volume.yaml
+5. Create a pod using the below yaml<br/>
+# Filename: nginx-pod-configmap-volume.yaml
 ```
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-configmap-volume
+  name: nginx-pod-configmap-vol
 spec:
   containers:
   - name: nginx-container
@@ -54,6 +62,13 @@ spec:
           path: file-b.txt
 ```
 <br/>
-Command:
+# Command:
+```
 kubectl create -f  nginx-pod-configmap-volume.yaml
+```
 
+6. Test the pod and see the files file-a.txt with content "Non-sensitive data inside file-1" and file-b.txt with content "Non-sensitive data inside file-2" are created in /etc/non-sensitive-data
+
+7. delete the configmap and delete it
+kubectl delete pod  nginx-pod-configmap-vol
+kubectle delete cm nginx-configmap-volume
