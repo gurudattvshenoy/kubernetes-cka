@@ -3,8 +3,8 @@
 Applications needs configuration data and common source of getting the data can be from .ini or XML or JSON or database etc. In k8s world, its configmaps. This config information is read from configmaps at the time of creating pods.
 
 ```
-k8s documentation says
-A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
+A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as 
+environment variables, command-line arguments, or as configuration files in a volume.
 ```
 
 
