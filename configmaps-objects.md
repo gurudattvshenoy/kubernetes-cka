@@ -1,6 +1,8 @@
 
 Config maps:
+Applications needs configuration data and common source of getting the data can be from .ini or XML or JSON or database etc. In k8s world, its configmaps. This config information is read from configmaps at the time of creating pods.
 
+Data Source
 
 ```
 #nginx-pod-configmap-volume.yaml
