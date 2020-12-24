@@ -15,9 +15,12 @@ echo -n 'Non-sensitive data inside file-2' > file-2.txt<br/>
 2. Create configmap <br/>
 kubectl create configmap nginx-configmap-volume --from-file=file-1.txt --from-file=file-2.txt
 <br/>
-3. View config maps <br/>
-kubectl get configmap<br/>
-kubectl describe configmap nginx-configmap-volume<br/> 
+3. View all config maps 
+<br/>
+   kubectl get configmap<br/>
+4. describe specific configmap
+   kubectl describe configmap nginx-configmap-volume
+<br/> 
 
 4. Create a pod using the below yaml<br/>
 #Filename: nginx-pod-configmap-volume.yaml
